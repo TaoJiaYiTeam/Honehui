@@ -1,0 +1,48 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+        <div id="app" class="ibox">
+            <div class="ibox-content">
+                <div class="form-group form-horizontal">
+                    <label class="control-label col-sm-2" for="StuGuid">请先选择老师：</label>
+                    <div class="col-sm-10">
+                        <select class="teaGuid col-sm-8">
+                            <option v-for="tea in teachers" v-bind:value="tea.RowGuid">{{tea.UserName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="form-group form-horizontal">
+                    <label class="control-label col-sm-2" for="StuGuid">然后选择学生：</label>
+                    <div class="col-sm-8">
+                        <select class="StuGuid col-sm-12">
+                            <option v-for="stu in students" v-bind:value="stu.RowGuid">{{stu.UserName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-footer">
+                <div class="row">
+                    <div class="col-sm-2 col-sm-offset-2">
+                        <button type="button" class="btn btn-primary btn-outline" @@click="add">添加到这个老师</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox">
+            <div class="ibox-content">
+                <table id="myTable" class="table table-hover"></table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script src="~/Scripts/Biz/StuManager.js"></script>
+}

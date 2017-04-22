@@ -1,0 +1,50 @@
+﻿
+<div class="middle-box text-center loginscreen animated fadeInDown">
+    <div>
+        <div>
+
+            <h1 class="logo-name">Hui</h1>
+
+        </div>
+        <h3>Welcome to HongHuiSys</h3>
+        <p>登陆吧.</p>
+        <form class="m-t" role="form" action="index.html">
+            <div class="form-group">
+                <input id="Name" type="text" class="form-control" placeholder="用户名" required="">
+            </div>
+            <div class="form-group">
+                <input id="Password" type="password" class="form-control" placeholder="密码" required="">
+            </div>
+            <button id="submit" type="button" style="width:100px;" class="ladda-button btn btn-primary" data-style="expand-left">登陆</button>
+        </form>
+        <p class="m-t"> <small>HongHui &copy; 2017</small> </p>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(function () {
+            var l=$('#submit').ladda();
+            l.click(function () {
+                l.ladda('start');
+                var param = {
+                    Name: $('#Name').val(),
+                    Password: $('#Password').val()
+                };
+                $.ajax({
+                    url: '/Logon/Logon',
+                    type: 'post',
+                    data: param,
+                    success: function (res) {
+                        if (res.Flag) {
+                            location.href = "/Main/Index";
+                        } else {
+                            toastr.error(res.Msg,"");
+                        }
+                        l.ladda('stop');
+                    }
+                });
+            });
+        })
+    </script>
+}

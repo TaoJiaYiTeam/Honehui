@@ -1,0 +1,59 @@
+﻿
+<div class="row">
+    <div class="col-sm-12">
+        <div id="app" class="ibox">
+            <div class="ibox-content">
+                <div class="form-group form-horizontal">
+                    <label class="control-label col-sm-2" for="StuGuid">学生名</label>
+                    <div class="col-sm-10">
+                        <select class="StuGuid col-sm-8" >
+                            <option v-for="stu in students" v-bind:value="stu.id">{{stu.text}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-footer">
+                <div class="row">
+                    <div class="col-sm-2 col-sm-offset-2">
+                        <button class="btn btn-primary btn-outline" @@click="search"><i class="fa fa-search"></i>查询</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox">
+            <div class="ibox-content">
+                <table id="myTable" class="table table-hover">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight" id="detailInfo">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <i class="fa fa-laptop modal-icon"></i>
+                <h4 class="modal-title">日记</h4>
+                <small class="font-bold">{{detail.Date}}</small>
+            </div>
+            <div class="modal-body">
+               <textarea id="modalContent">{{detail.Content}}</textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/Biz/studentDaily.js">     
+    </script>
+}

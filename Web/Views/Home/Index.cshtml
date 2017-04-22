@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section styles{
+    <style>
+    .done:after {
+        content:"【已完成】";
+        color:#0f0;
+    }
+    .doing:after {
+        content:"【未完成】单击填写日志";
+        color:#ff6a00;
+    }
+
+    </style>
+    
+    }
+<div class="row">
+    <div class="col-sm-3">
+        <div class="ibox">
+            <div class="ibox-title">
+                <h5>注意事项</h5>
+                
+            </div>
+            <div class="ibox-content">
+                <p>单击事件，进入日记填写页面</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>酷酷的日历</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    //right: 'month,agendaWeek,agendaDay'
+                    right: 'month'
+                },
+                editable: false,
+                droppable: false, // this allows things to be dropped onto the calendar
+                drop: function () {
+                    // is the "remove after drop" checkbox checked?
+                    //if ($('#drop-remove').is(':checked')) {
+                    //    // if so, remove the element from the "Draggable Events" list
+                    //    $(this).remove();
+                    //}
+                },
+                events: function () {
+                    var result = [];
+                    $.ajax({
+                        url: '/Home/GetDaily',
+                        type: 'get',
+                        async: false,
+                        success: function (res) {
+                            result = res;
+                        }
+                    })
+                    return result;
+                }(),
+            });
+        })
+        
+    </script>
+    }

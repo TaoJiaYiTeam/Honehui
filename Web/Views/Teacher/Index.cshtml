@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+@section styles{
+    <style>
+
+    </style>
+}
+<div class="row">
+    <div class="col-sm-3">
+        <div class="ibox">
+            <div class="ibox-title">
+                <h5>任务</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div id='external-events'>
+                    <p>拖拽任务到日历上.</p>
+                    <div class='external-event navy-bg'>日记</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>任务的日历</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+
+            $('#external-events div.external-event').each(function () {
+
+                // store data so the calendar knows to render an event upon drop
+                $(this).data('event', {
+                    title: $.trim($(this).text()), // use the element's text as the event title
+                    stick: true // maintain when user navigates (see docs on the renderEvent method)
+                });
+
+                // make the event draggable using jQuery UI
+                $(this).draggable({
+                    zIndex: 1111999,
+                    revert: true,      // will cause the event to go back to its
+                    revertDuration: 0  //  original position after the drag
+                });
+
+            });
+
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    //right: 'month,agendaWeek,agendaDay'
+                    right: 'month'
+                },
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar
+                drop: function () {
+                    var date = arguments[0].format();
+                    $.ajax({
+                        url: '/Teacher/AddMission',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            Date: date,
+                            Title: '日记',
+                        },
+                        success: function (res) { }
+
+                    });
+                    // is the "remove after drop" checkbox checked?
+                    //if ($('#drop-remove').is(':checked')) {
+                    //    // if so, remove the element from the "Draggable Events" list
+                    //    $(this).remove();
+                    //}
+                },
+                eventDrop: function (event, dayDelta, revertFunc) {
+                    $.ajax({
+                        url: '/Teacher/ChangeMission',
+                        type: 'post',
+                        data: {
+                            RowGuid: event.id,
+                            Date: event.start.format(),
+                            Title: event.title,
+                        },
+                        dataType:'json',
+                        success: function (res) { }
+                    });
+                },
+                eventClick: function (event) {
+                    var self = this;
+                    swal({
+                        title: "是否删除任务?",
+                        text: "",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "删除",
+                        cancelButtonText: "删除",
+                        closeOnConfirm: true
+                    }, function () {
+                        $.ajax({
+                            url: '/Teacher/DeleteMission',
+                            type: 'post',
+                            data: {
+                                RowGuid: event.id,
+                                Date: event.start.format(),
+                                Title: event.title,
+                            },
+                            dataType: 'json',
+                            success: function (res) {
+                                if (res.Flag) {
+                                    $("#calendar").fullCalendar("removeEvents", event.id);
+                                } else {
+                                    toastr.danger("删除失败","");
+                                }
+                            }
+                        });
+                    });
+                },
+                events: function () {
+                    var result = [];
+                    $.ajax({
+                        url: '/Teacher/GetDaily',
+                        type: 'get',
+                        async: false,
+                        success: function (res) {
+                            result = res;
+                        }
+                    })
+                    return result;
+                }(),
+            });
+        })
+
+    </script>
+}

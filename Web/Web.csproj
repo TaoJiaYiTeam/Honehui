@@ -1,0 +1,1008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2C6662EC-C300-46B8-B2D4-0122711D154E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.5.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogonController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
+    <Compile Include="Filters\CusAuthorityAttribute.cs" />
+    <Compile Include="Filters\CustomActionAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Library\bootstrapTable\bootstrap-table-locale-all.js" />
+    <Content Include="Library\bootstrapTable\bootstrap-table-locale-all.min.js" />
+    <Content Include="Library\bootstrapTable\bootstrap-table.css" />
+    <Content Include="Library\bootstrapTable\bootstrap-table.js" />
+    <Content Include="Library\bootstrapTable\bootstrap-table.min.css" />
+    <Content Include="Library\bootstrapTable\bootstrap-table.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\accent-neutralise\bootstrap-table-accent-neutralise.js" />
+    <Content Include="Library\bootstrapTable\extensions\accent-neutralise\bootstrap-table-accent-neutralise.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\angular\bootstrap-table-angular.js" />
+    <Content Include="Library\bootstrapTable\extensions\angular\bootstrap-table-angular.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\auto-refresh\bootstrap-table-auto-refresh.css" />
+    <Content Include="Library\bootstrapTable\extensions\auto-refresh\bootstrap-table-auto-refresh.js" />
+    <Content Include="Library\bootstrapTable\extensions\auto-refresh\bootstrap-table-auto-refresh.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\click-edit-row\bootstrap-table-click-edit-row.css" />
+    <Content Include="Library\bootstrapTable\extensions\click-edit-row\bootstrap-table-click-edit-row.js" />
+    <Content Include="Library\bootstrapTable\extensions\click-edit-row\bootstrap-table-click-edit-row.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\cookie\bootstrap-table-cookie.js" />
+    <Content Include="Library\bootstrapTable\extensions\cookie\bootstrap-table-cookie.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\copy-rows\bootstrap-table-copy-rows.js" />
+    <Content Include="Library\bootstrapTable\extensions\copy-rows\bootstrap-table-copy-rows.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\editable\bootstrap-table-editable.js" />
+    <Content Include="Library\bootstrapTable\extensions\editable\bootstrap-table-editable.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\export\bootstrap-table-export.js" />
+    <Content Include="Library\bootstrapTable\extensions\export\bootstrap-table-export.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\filter-control\bootstrap-table-filter-control.css" />
+    <Content Include="Library\bootstrapTable\extensions\filter-control\bootstrap-table-filter-control.js" />
+    <Content Include="Library\bootstrapTable\extensions\filter-control\bootstrap-table-filter-control.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\filter\bootstrap-table-filter.js" />
+    <Content Include="Library\bootstrapTable\extensions\filter\bootstrap-table-filter.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\flat-json\bootstrap-table-flat-json.js" />
+    <Content Include="Library\bootstrapTable\extensions\flat-json\bootstrap-table-flat-json.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\group-by-v2\bootstrap-table-group-by.css" />
+    <Content Include="Library\bootstrapTable\extensions\group-by-v2\bootstrap-table-group-by.js" />
+    <Content Include="Library\bootstrapTable\extensions\group-by-v2\bootstrap-table-group-by.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\group-by\bootstrap-table-group-by.css" />
+    <Content Include="Library\bootstrapTable\extensions\group-by\bootstrap-table-group-by.js" />
+    <Content Include="Library\bootstrapTable\extensions\group-by\bootstrap-table-group-by.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\i18n-enhance\bootstrap-table-i18n-enhance.js" />
+    <Content Include="Library\bootstrapTable\extensions\i18n-enhance\bootstrap-table-i18n-enhance.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\key-events\bootstrap-table-key-events.js" />
+    <Content Include="Library\bootstrapTable\extensions\key-events\bootstrap-table-key-events.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\mobile\bootstrap-table-mobile.js" />
+    <Content Include="Library\bootstrapTable\extensions\mobile\bootstrap-table-mobile.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\multi-column-toggle\bootstrap-table-multi-toggle.js" />
+    <Content Include="Library\bootstrapTable\extensions\multi-column-toggle\bootstrap-table-multi-toggle.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\multiple-search\bootstrap-table-multiple-search.js" />
+    <Content Include="Library\bootstrapTable\extensions\multiple-search\bootstrap-table-multiple-search.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\multiple-selection-row\bootstrap-table-multiple-selection-row.css" />
+    <Content Include="Library\bootstrapTable\extensions\multiple-selection-row\bootstrap-table-multiple-selection-row.js" />
+    <Content Include="Library\bootstrapTable\extensions\multiple-selection-row\bootstrap-table-multiple-selection-row.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\multiple-sort\bootstrap-table-multiple-sort.js" />
+    <Content Include="Library\bootstrapTable\extensions\multiple-sort\bootstrap-table-multiple-sort.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\natural-sorting\bootstrap-table-natural-sorting.js" />
+    <Content Include="Library\bootstrapTable\extensions\natural-sorting\bootstrap-table-natural-sorting.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\print\bootstrap-table-print.js" />
+    <Content Include="Library\bootstrapTable\extensions\print\bootstrap-table-print.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\reorder-columns\bootstrap-table-reorder-columns.js" />
+    <Content Include="Library\bootstrapTable\extensions\reorder-columns\bootstrap-table-reorder-columns.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\reorder-rows\bootstrap-table-reorder-rows.css" />
+    <Content Include="Library\bootstrapTable\extensions\reorder-rows\bootstrap-table-reorder-rows.js" />
+    <Content Include="Library\bootstrapTable\extensions\reorder-rows\bootstrap-table-reorder-rows.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\resizable\bootstrap-table-resizable.js" />
+    <Content Include="Library\bootstrapTable\extensions\resizable\bootstrap-table-resizable.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\select2-filter\bootstrap-table-select2-filter.js" />
+    <Content Include="Library\bootstrapTable\extensions\select2-filter\bootstrap-table-select2-filter.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\sticky-header\bootstrap-table-sticky-header.css" />
+    <Content Include="Library\bootstrapTable\extensions\sticky-header\bootstrap-table-sticky-header.js" />
+    <Content Include="Library\bootstrapTable\extensions\sticky-header\bootstrap-table-sticky-header.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\toolbar\bootstrap-table-toolbar.js" />
+    <Content Include="Library\bootstrapTable\extensions\toolbar\bootstrap-table-toolbar.min.js" />
+    <Content Include="Library\bootstrapTable\extensions\tree-column\bootstrap-table-tree-column.css" />
+    <Content Include="Library\bootstrapTable\extensions\tree-column\bootstrap-table-tree-column.js" />
+    <Content Include="Library\bootstrapTable\extensions\tree-column\bootstrap-table-tree-column.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-af-ZA.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-af-ZA.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ar-SA.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ar-SA.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ca-ES.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ca-ES.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-cs-CZ.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-cs-CZ.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-da-DK.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-da-DK.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-de-DE.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-de-DE.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-el-GR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-el-GR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-en-US.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-en-US.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-AR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-AR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-CL.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-CL.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-CR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-CR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-ES.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-ES.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-MX.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-MX.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-NI.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-NI.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-SP.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-es-SP.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-et-EE.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-et-EE.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-fa-IR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-fa-IR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-fr-BE.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-fr-BE.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-fr-FR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-fr-FR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-he-IL.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-he-IL.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-hr-HR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-hr-HR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-hu-HU.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-hu-HU.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-id-ID.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-id-ID.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-it-IT.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-it-IT.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ja-JP.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ja-JP.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ka-GE.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ka-GE.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ko-KR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ko-KR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ms-MY.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ms-MY.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-nb-NO.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-nb-NO.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-nl-NL.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-nl-NL.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-pl-PL.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-pl-PL.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-pt-BR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-pt-BR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-pt-PT.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-pt-PT.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ro-RO.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ro-RO.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ru-RU.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ru-RU.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-sk-SK.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-sk-SK.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-sv-SE.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-sv-SE.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-th-TH.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-th-TH.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-tr-TR.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-tr-TR.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-uk-UA.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-uk-UA.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ur-PK.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-ur-PK.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-uz-Latn-UZ.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-uz-Latn-UZ.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-vi-VN.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-vi-VN.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-zh-CN.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-zh-TW.js" />
+    <Content Include="Library\bootstrapTable\locale\bootstrap-table-zh-TW.min.js" />
+    <Content Include="Library\css\animate.css" />
+    <Content Include="Library\css\bootstrap.min.css" />
+    <Content Include="Library\css\patterns\3.png" />
+    <Content Include="Library\css\patterns\4.png" />
+    <Content Include="Library\css\patterns\header-profile-skin-1.png" />
+    <Content Include="Library\css\patterns\header-profile-skin-2.png" />
+    <Content Include="Library\css\patterns\header-profile-skin-3.png" />
+    <Content Include="Library\css\patterns\header-profile.png" />
+    <Content Include="Library\css\patterns\shattered.png" />
+    <Content Include="Library\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Library\css\plugins\blueimp\css\blueimp-gallery.min.css" />
+    <Content Include="Library\css\plugins\blueimp\img\error.png" />
+    <Content Include="Library\css\plugins\blueimp\img\error.svg" />
+    <Content Include="Library\css\plugins\blueimp\img\loading.gif" />
+    <Content Include="Library\css\plugins\blueimp\img\play-pause.png" />
+    <Content Include="Library\css\plugins\blueimp\img\play-pause.svg" />
+    <Content Include="Library\css\plugins\blueimp\img\video-play.png" />
+    <Content Include="Library\css\plugins\blueimp\img\video-play.svg" />
+    <Content Include="Library\css\plugins\bootstrap-markdown\bootstrap-markdown.min.css" />
+    <Content Include="Library\css\plugins\bootstrapTour\bootstrap-tour.min.css" />
+    <Content Include="Library\css\plugins\c3\c3.min.css" />
+    <Content Include="Library\css\plugins\chartist\chartist.min.css" />
+    <Content Include="Library\css\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="Library\css\plugins\chosen\chosen-sprite.png" />
+    <Content Include="Library\css\plugins\chosen\chosen.css" />
+    <Content Include="Library\css\plugins\clockpicker\clockpicker.css" />
+    <Content Include="Library\css\plugins\codemirror\ambiance.css" />
+    <Content Include="Library\css\plugins\codemirror\codemirror.css" />
+    <Content Include="Library\css\plugins\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="Library\css\plugins\cropper\cropper.min.css" />
+    <Content Include="Library\css\plugins\datapicker\datepicker3.css" />
+    <Content Include="Library\css\plugins\dataTables\datatables.min.css" />
+    <Content Include="Library\css\plugins\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Library\css\plugins\dropzone\basic.css" />
+    <Content Include="Library\css\plugins\dropzone\dropzone.css" />
+    <Content Include="Library\css\plugins\footable\fonts\footable.svg" />
+    <Content Include="Library\css\plugins\footable\footable.core.css" />
+    <Content Include="Library\css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="Library\css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Library\css\plugins\iCheck\custom.css" />
+    <Content Include="Library\css\plugins\iCheck\green%402x.png" />
+    <Content Include="Library\css\plugins\iCheck\green.png" />
+    <Content Include="Library\css\plugins\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Library\css\plugins\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Library\css\plugins\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Library\css\plugins\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="Library\css\plugins\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Library\css\plugins\images\sprite-skin-flat.png" />
+    <Content Include="Library\css\plugins\images\spritemap%402x.png" />
+    <Content Include="Library\css\plugins\images\spritemap.png" />
+    <Content Include="Library\css\plugins\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="Library\css\plugins\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Library\css\plugins\jasny\jasny-bootstrap.min.css" />
+    <Content Include="Library\css\plugins\jqGrid\ui.jqgrid.css" />
+    <Content Include="Library\css\plugins\jQueryUI\images\animated-overlay.gif" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-icons_222222_256x240.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-icons_454545_256x240.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-icons_888888_256x240.png" />
+    <Content Include="Library\css\plugins\jQueryUI\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Library\css\plugins\jQueryUI\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="Library\css\plugins\jQueryUI\jquery-ui.css" />
+    <Content Include="Library\css\plugins\jsTree\32px.png" />
+    <Content Include="Library\css\plugins\jsTree\40px.png" />
+    <Content Include="Library\css\plugins\jsTree\style.min.css" />
+    <Content Include="Library\css\plugins\jsTree\throbber.gif" />
+    <Content Include="Library\css\plugins\ladda\ladda-themeless.min.css" />
+    <Content Include="Library\css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="Library\css\plugins\nouslider\jquery.nouislider.css" />
+    <Content Include="Library\css\plugins\select2\select2.min.css" />
+    <Content Include="Library\css\plugins\slick\ajax-loader.gif" />
+    <Content Include="Library\css\plugins\slick\fonts\slick.svg" />
+    <Content Include="Library\css\plugins\slick\slick-theme.css" />
+    <Content Include="Library\css\plugins\slick\slick.css" />
+    <Content Include="Library\css\plugins\steps\jquery.steps.css" />
+    <Content Include="Library\css\plugins\summernote\summernote-bs3.css" />
+    <Content Include="Library\css\plugins\summernote\summernote.css" />
+    <Content Include="Library\css\plugins\sweetalert\sweetalert.css" />
+    <Content Include="Library\css\plugins\switchery\switchery.css" />
+    <Content Include="Library\css\plugins\toastr\toastr.min.css" />
+    <Content Include="Library\css\plugins\touchspin\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Library\css\style.css" />
+    <Content Include="Library\email_templates\action.html" />
+    <Content Include="Library\email_templates\alert.html" />
+    <Content Include="Library\email_templates\billing.html" />
+    <Content Include="Library\email_templates\img\header.jpg" />
+    <Content Include="Library\email_templates\styles.css" />
+    <Content Include="Library\font-awesome\css\font-awesome.css" />
+    <Content Include="Library\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Library\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Library\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Library\img\a1.jpg" />
+    <Content Include="Library\img\a2.jpg" />
+    <Content Include="Library\img\a3.jpg" />
+    <Content Include="Library\img\a4.jpg" />
+    <Content Include="Library\img\a5.jpg" />
+    <Content Include="Library\img\a6.jpg" />
+    <Content Include="Library\img\a7.jpg" />
+    <Content Include="Library\img\a8.jpg" />
+    <Content Include="Library\img\angular_logo.png" />
+    <Content Include="Library\img\dashbard4_1.jpg" />
+    <Content Include="Library\img\dashbard4_2.jpg" />
+    <Content Include="Library\img\email_1.jpg" />
+    <Content Include="Library\img\email_2.jpg" />
+    <Content Include="Library\img\email_3.jpg" />
+    <Content Include="Library\img\flags\16\Spain.png" />
+    <Content Include="Library\img\flags\16\United-States.png" />
+    <Content Include="Library\img\flags\32\Abkhazia.png" />
+    <Content Include="Library\img\flags\32\Afghanistan.png" />
+    <Content Include="Library\img\flags\32\Aland.png" />
+    <Content Include="Library\img\flags\32\Albania.png" />
+    <Content Include="Library\img\flags\32\Algeria.png" />
+    <Content Include="Library\img\flags\32\American-Samoa.png" />
+    <Content Include="Library\img\flags\32\Andorra.png" />
+    <Content Include="Library\img\flags\32\Angola.png" />
+    <Content Include="Library\img\flags\32\Anguilla.png" />
+    <Content Include="Library\img\flags\32\Antarctica.png" />
+    <Content Include="Library\img\flags\32\Antigua-and-Barbuda.png" />
+    <Content Include="Library\img\flags\32\Argentina.png" />
+    <Content Include="Library\img\flags\32\Armenia.png" />
+    <Content Include="Library\img\flags\32\Aruba.png" />
+    <Content Include="Library\img\flags\32\Australia.png" />
+    <Content Include="Library\img\flags\32\Austria.png" />
+    <Content Include="Library\img\flags\32\Azerbaijan.png" />
+    <Content Include="Library\img\flags\32\Bahamas.png" />
+    <Content Include="Library\img\flags\32\Bahrain.png" />
+    <Content Include="Library\img\flags\32\Bangladesh.png" />
+    <Content Include="Library\img\flags\32\Barbados.png" />
+    <Content Include="Library\img\flags\32\Basque-Country.png" />
+    <Content Include="Library\img\flags\32\Belarus.png" />
+    <Content Include="Library\img\flags\32\Belgium.png" />
+    <Content Include="Library\img\flags\32\Belize.png" />
+    <Content Include="Library\img\flags\32\Benin.png" />
+    <Content Include="Library\img\flags\32\Bermuda.png" />
+    <Content Include="Library\img\flags\32\Bhutan.png" />
+    <Content Include="Library\img\flags\32\Bolivia.png" />
+    <Content Include="Library\img\flags\32\Bosnia-and-Herzegovina.png" />
+    <Content Include="Library\img\flags\32\Botswana.png" />
+    <Content Include="Library\img\flags\32\Brazil.png" />
+    <Content Include="Library\img\flags\32\British-Antarctic-Territory.png" />
+    <Content Include="Library\img\flags\32\British-Virgin-Islands.png" />
+    <Content Include="Library\img\flags\32\Brunei.png" />
+    <Content Include="Library\img\flags\32\Bulgaria.png" />
+    <Content Include="Library\img\flags\32\Burkina-Faso.png" />
+    <Content Include="Library\img\flags\32\Burundi.png" />
+    <Content Include="Library\img\flags\32\Cambodia.png" />
+    <Content Include="Library\img\flags\32\Cameroon.png" />
+    <Content Include="Library\img\flags\32\Canada.png" />
+    <Content Include="Library\img\flags\32\Canary-Islands.png" />
+    <Content Include="Library\img\flags\32\Cape-Verde.png" />
+    <Content Include="Library\img\flags\32\Cayman-Islands.png" />
+    <Content Include="Library\img\flags\32\Central-African-Republic.png" />
+    <Content Include="Library\img\flags\32\Chad.png" />
+    <Content Include="Library\img\flags\32\Chile.png" />
+    <Content Include="Library\img\flags\32\China.png" />
+    <Content Include="Library\img\flags\32\Christmas-Island.png" />
+    <Content Include="Library\img\flags\32\Cocos-Keeling-Islands.png" />
+    <Content Include="Library\img\flags\32\Colombia.png" />
+    <Content Include="Library\img\flags\32\Commonwealth.png" />
+    <Content Include="Library\img\flags\32\Comoros.png" />
+    <Content Include="Library\img\flags\32\Cook-Islands.png" />
+    <Content Include="Library\img\flags\32\Costa-Rica.png" />
+    <Content Include="Library\img\flags\32\Cote-dIvoire.png" />
+    <Content Include="Library\img\flags\32\Croatia.png" />
+    <Content Include="Library\img\flags\32\Cuba.png" />
+    <Content Include="Library\img\flags\32\Curacao.png" />
+    <Content Include="Library\img\flags\32\Cyprus.png" />
+    <Content Include="Library\img\flags\32\Czech-Republic.png" />
+    <Content Include="Library\img\flags\32\Democratic-Republic-of-the-Congo.png" />
+    <Content Include="Library\img\flags\32\Denmark.png" />
+    <Content Include="Library\img\flags\32\Djibouti.png" />
+    <Content Include="Library\img\flags\32\Dominica.png" />
+    <Content Include="Library\img\flags\32\Dominican-Republic.png" />
+    <Content Include="Library\img\flags\32\East-Timor.png" />
+    <Content Include="Library\img\flags\32\Ecuador.png" />
+    <Content Include="Library\img\flags\32\Egypt.png" />
+    <Content Include="Library\img\flags\32\El-Salvador.png" />
+    <Content Include="Library\img\flags\32\England.png" />
+    <Content Include="Library\img\flags\32\Equatorial-Guinea.png" />
+    <Content Include="Library\img\flags\32\Eritrea.png" />
+    <Content Include="Library\img\flags\32\Estonia.png" />
+    <Content Include="Library\img\flags\32\Ethiopia.png" />
+    <Content Include="Library\img\flags\32\European-Union.png" />
+    <Content Include="Library\img\flags\32\Falkland-Islands.png" />
+    <Content Include="Library\img\flags\32\Faroes.png" />
+    <Content Include="Library\img\flags\32\Fiji.png" />
+    <Content Include="Library\img\flags\32\Finland.png" />
+    <Content Include="Library\img\flags\32\France.png" />
+    <Content Include="Library\img\flags\32\French-Polynesia.png" />
+    <Content Include="Library\img\flags\32\French-Southern-Territories.png" />
+    <Content Include="Library\img\flags\32\Gabon.png" />
+    <Content Include="Library\img\flags\32\Gambia.png" />
+    <Content Include="Library\img\flags\32\Georgia.png" />
+    <Content Include="Library\img\flags\32\Germany.png" />
+    <Content Include="Library\img\flags\32\Ghana.png" />
+    <Content Include="Library\img\flags\32\Gibraltar.png" />
+    <Content Include="Library\img\flags\32\GoSquared.png" />
+    <Content Include="Library\img\flags\32\Greece.png" />
+    <Content Include="Library\img\flags\32\Greenland.png" />
+    <Content Include="Library\img\flags\32\Grenada.png" />
+    <Content Include="Library\img\flags\32\Guam.png" />
+    <Content Include="Library\img\flags\32\Guatemala.png" />
+    <Content Include="Library\img\flags\32\Guernsey.png" />
+    <Content Include="Library\img\flags\32\Guinea-Bissau.png" />
+    <Content Include="Library\img\flags\32\Guinea.png" />
+    <Content Include="Library\img\flags\32\Guyana.png" />
+    <Content Include="Library\img\flags\32\Haiti.png" />
+    <Content Include="Library\img\flags\32\Honduras.png" />
+    <Content Include="Library\img\flags\32\Hong-Kong.png" />
+    <Content Include="Library\img\flags\32\Hungary.png" />
+    <Content Include="Library\img\flags\32\Iceland.png" />
+    <Content Include="Library\img\flags\32\India.png" />
+    <Content Include="Library\img\flags\32\Indonesia.png" />
+    <Content Include="Library\img\flags\32\Iran.png" />
+    <Content Include="Library\img\flags\32\Iraq.png" />
+    <Content Include="Library\img\flags\32\Ireland.png" />
+    <Content Include="Library\img\flags\32\Isle-of-Man.png" />
+    <Content Include="Library\img\flags\32\Israel.png" />
+    <Content Include="Library\img\flags\32\Italy.png" />
+    <Content Include="Library\img\flags\32\Jamaica.png" />
+    <Content Include="Library\img\flags\32\Japan.png" />
+    <Content Include="Library\img\flags\32\Jersey.png" />
+    <Content Include="Library\img\flags\32\Jordan.png" />
+    <Content Include="Library\img\flags\32\Kazakhstan.png" />
+    <Content Include="Library\img\flags\32\Kenya.png" />
+    <Content Include="Library\img\flags\32\Kiribati.png" />
+    <Content Include="Library\img\flags\32\Kosovo.png" />
+    <Content Include="Library\img\flags\32\Kuwait.png" />
+    <Content Include="Library\img\flags\32\Kyrgyzstan.png" />
+    <Content Include="Library\img\flags\32\Laos.png" />
+    <Content Include="Library\img\flags\32\Latvia.png" />
+    <Content Include="Library\img\flags\32\Lebanon.png" />
+    <Content Include="Library\img\flags\32\Lesotho.png" />
+    <Content Include="Library\img\flags\32\Liberia.png" />
+    <Content Include="Library\img\flags\32\Libya.png" />
+    <Content Include="Library\img\flags\32\Liechtenstein.png" />
+    <Content Include="Library\img\flags\32\Lithuania.png" />
+    <Content Include="Library\img\flags\32\Luxembourg.png" />
+    <Content Include="Library\img\flags\32\Macau.png" />
+    <Content Include="Library\img\flags\32\Macedonia.png" />
+    <Content Include="Library\img\flags\32\Madagascar.png" />
+    <Content Include="Library\img\flags\32\Malawi.png" />
+    <Content Include="Library\img\flags\32\Malaysia.png" />
+    <Content Include="Library\img\flags\32\Maldives.png" />
+    <Content Include="Library\img\flags\32\Mali.png" />
+    <Content Include="Library\img\flags\32\Malta.png" />
+    <Content Include="Library\img\flags\32\Mars.png" />
+    <Content Include="Library\img\flags\32\Marshall-Islands.png" />
+    <Content Include="Library\img\flags\32\Martinique.png" />
+    <Content Include="Library\img\flags\32\Mauritania.png" />
+    <Content Include="Library\img\flags\32\Mauritius.png" />
+    <Content Include="Library\img\flags\32\Mayotte.png" />
+    <Content Include="Library\img\flags\32\Mexico.png" />
+    <Content Include="Library\img\flags\32\Micronesia.png" />
+    <Content Include="Library\img\flags\32\Moldova.png" />
+    <Content Include="Library\img\flags\32\Monaco.png" />
+    <Content Include="Library\img\flags\32\Mongolia.png" />
+    <Content Include="Library\img\flags\32\Montenegro.png" />
+    <Content Include="Library\img\flags\32\Montserrat.png" />
+    <Content Include="Library\img\flags\32\Morocco.png" />
+    <Content Include="Library\img\flags\32\Mozambique.png" />
+    <Content Include="Library\img\flags\32\Myanmar.png" />
+    <Content Include="Library\img\flags\32\Nagorno-Karabakh.png" />
+    <Content Include="Library\img\flags\32\Namibia.png" />
+    <Content Include="Library\img\flags\32\NATO.png" />
+    <Content Include="Library\img\flags\32\Nauru.png" />
+    <Content Include="Library\img\flags\32\Nepal.png" />
+    <Content Include="Library\img\flags\32\Netherlands-Antilles.png" />
+    <Content Include="Library\img\flags\32\Netherlands.png" />
+    <Content Include="Library\img\flags\32\New-Caledonia.png" />
+    <Content Include="Library\img\flags\32\New-Zealand.png" />
+    <Content Include="Library\img\flags\32\Nicaragua.png" />
+    <Content Include="Library\img\flags\32\Niger.png" />
+    <Content Include="Library\img\flags\32\Nigeria.png" />
+    <Content Include="Library\img\flags\32\Niue.png" />
+    <Content Include="Library\img\flags\32\Norfolk-Island.png" />
+    <Content Include="Library\img\flags\32\North-Korea.png" />
+    <Content Include="Library\img\flags\32\Northern-Cyprus.png" />
+    <Content Include="Library\img\flags\32\Northern-Mariana-Islands.png" />
+    <Content Include="Library\img\flags\32\Norway.png" />
+    <Content Include="Library\img\flags\32\Olympics.png" />
+    <Content Include="Library\img\flags\32\Oman.png" />
+    <Content Include="Library\img\flags\32\Pakistan.png" />
+    <Content Include="Library\img\flags\32\Palau.png" />
+    <Content Include="Library\img\flags\32\Palestine.png" />
+    <Content Include="Library\img\flags\32\Panama.png" />
+    <Content Include="Library\img\flags\32\Papua-New-Guinea.png" />
+    <Content Include="Library\img\flags\32\Paraguay.png" />
+    <Content Include="Library\img\flags\32\Peru.png" />
+    <Content Include="Library\img\flags\32\Philippines.png" />
+    <Content Include="Library\img\flags\32\Pitcairn-Islands.png" />
+    <Content Include="Library\img\flags\32\Poland.png" />
+    <Content Include="Library\img\flags\32\Portugal.png" />
+    <Content Include="Library\img\flags\32\Puerto-Rico.png" />
+    <Content Include="Library\img\flags\32\Qatar.png" />
+    <Content Include="Library\img\flags\32\Red-Cross.png" />
+    <Content Include="Library\img\flags\32\Republic-of-the-Congo.png" />
+    <Content Include="Library\img\flags\32\Romania.png" />
+    <Content Include="Library\img\flags\32\Russia.png" />
+    <Content Include="Library\img\flags\32\Rwanda.png" />
+    <Content Include="Library\img\flags\32\Saint-Barthelemy.png" />
+    <Content Include="Library\img\flags\32\Saint-Helena.png" />
+    <Content Include="Library\img\flags\32\Saint-Kitts-and-Nevis.png" />
+    <Content Include="Library\img\flags\32\Saint-Lucia.png" />
+    <Content Include="Library\img\flags\32\Saint-Martin.png" />
+    <Content Include="Library\img\flags\32\Saint-Vincent-and-the-Grenadines.png" />
+    <Content Include="Library\img\flags\32\Samoa.png" />
+    <Content Include="Library\img\flags\32\San-Marino.png" />
+    <Content Include="Library\img\flags\32\Sao-Tome-and-Principe.png" />
+    <Content Include="Library\img\flags\32\Saudi-Arabia.png" />
+    <Content Include="Library\img\flags\32\Scotland.png" />
+    <Content Include="Library\img\flags\32\Senegal.png" />
+    <Content Include="Library\img\flags\32\Serbia.png" />
+    <Content Include="Library\img\flags\32\Seychelles.png" />
+    <Content Include="Library\img\flags\32\Sierra-Leone.png" />
+    <Content Include="Library\img\flags\32\Singapore.png" />
+    <Content Include="Library\img\flags\32\Slovakia.png" />
+    <Content Include="Library\img\flags\32\Slovenia.png" />
+    <Content Include="Library\img\flags\32\Solomon-Islands.png" />
+    <Content Include="Library\img\flags\32\Somalia.png" />
+    <Content Include="Library\img\flags\32\Somaliland.png" />
+    <Content Include="Library\img\flags\32\South-Africa.png" />
+    <Content Include="Library\img\flags\32\South-Georgia-and-the-South-Sandwich-Islands.png" />
+    <Content Include="Library\img\flags\32\South-Korea.png" />
+    <Content Include="Library\img\flags\32\South-Ossetia.png" />
+    <Content Include="Library\img\flags\32\South-Sudan.png" />
+    <Content Include="Library\img\flags\32\Spain.png" />
+    <Content Include="Library\img\flags\32\Sri-Lanka.png" />
+    <Content Include="Library\img\flags\32\Sudan.png" />
+    <Content Include="Library\img\flags\32\Suriname.png" />
+    <Content Include="Library\img\flags\32\Swaziland.png" />
+    <Content Include="Library\img\flags\32\Sweden.png" />
+    <Content Include="Library\img\flags\32\Switzerland.png" />
+    <Content Include="Library\img\flags\32\Syria.png" />
+    <Content Include="Library\img\flags\32\Taiwan.png" />
+    <Content Include="Library\img\flags\32\Tajikistan.png" />
+    <Content Include="Library\img\flags\32\Tanzania.png" />
+    <Content Include="Library\img\flags\32\Thailand.png" />
+    <Content Include="Library\img\flags\32\Togo.png" />
+    <Content Include="Library\img\flags\32\Tokelau.png" />
+    <Content Include="Library\img\flags\32\Tonga.png" />
+    <Content Include="Library\img\flags\32\Trinidad-and-Tobago.png" />
+    <Content Include="Library\img\flags\32\Tunisia.png" />
+    <Content Include="Library\img\flags\32\Turkey.png" />
+    <Content Include="Library\img\flags\32\Turkmenistan.png" />
+    <Content Include="Library\img\flags\32\Turks-and-Caicos-Islands.png" />
+    <Content Include="Library\img\flags\32\Tuvalu.png" />
+    <Content Include="Library\img\flags\32\Uganda.png" />
+    <Content Include="Library\img\flags\32\Ukraine.png" />
+    <Content Include="Library\img\flags\32\United-Arab-Emirates.png" />
+    <Content Include="Library\img\flags\32\United-Kingdom.png" />
+    <Content Include="Library\img\flags\32\United-Nations.png" />
+    <Content Include="Library\img\flags\32\United-States.png" />
+    <Content Include="Library\img\flags\32\Unknown.png" />
+    <Content Include="Library\img\flags\32\Uruguay.png" />
+    <Content Include="Library\img\flags\32\US-Virgin-Islands.png" />
+    <Content Include="Library\img\flags\32\Uzbekistan.png" />
+    <Content Include="Library\img\flags\32\Vanuatu.png" />
+    <Content Include="Library\img\flags\32\Vatican-City.png" />
+    <Content Include="Library\img\flags\32\Venezuela.png" />
+    <Content Include="Library\img\flags\32\Vietnam.png" />
+    <Content Include="Library\img\flags\32\Wales.png" />
+    <Content Include="Library\img\flags\32\Wallis-And-Futuna.png" />
+    <Content Include="Library\img\flags\32\Western-Sahara.png" />
+    <Content Include="Library\img\flags\32\Yemen.png" />
+    <Content Include="Library\img\flags\32\Zambia.png" />
+    <Content Include="Library\img\flags\32\Zimbabwe.png" />
+    <Content Include="Library\img\full_height.jpg" />
+    <Content Include="Library\img\gallery\1.jpg" />
+    <Content Include="Library\img\gallery\10.jpg" />
+    <Content Include="Library\img\gallery\10s.jpg" />
+    <Content Include="Library\img\gallery\11.jpg" />
+    <Content Include="Library\img\gallery\11s.jpg" />
+    <Content Include="Library\img\gallery\12.jpg" />
+    <Content Include="Library\img\gallery\12s.jpg" />
+    <Content Include="Library\img\gallery\1s.jpg" />
+    <Content Include="Library\img\gallery\2.jpg" />
+    <Content Include="Library\img\gallery\2s.jpg" />
+    <Content Include="Library\img\gallery\3.jpg" />
+    <Content Include="Library\img\gallery\3s.jpg" />
+    <Content Include="Library\img\gallery\4.jpg" />
+    <Content Include="Library\img\gallery\4s.jpg" />
+    <Content Include="Library\img\gallery\5.jpg" />
+    <Content Include="Library\img\gallery\5s.jpg" />
+    <Content Include="Library\img\gallery\6.jpg" />
+    <Content Include="Library\img\gallery\6s.jpg" />
+    <Content Include="Library\img\gallery\7.jpg" />
+    <Content Include="Library\img\gallery\7s.jpg" />
+    <Content Include="Library\img\gallery\8.jpg" />
+    <Content Include="Library\img\gallery\8s.jpg" />
+    <Content Include="Library\img\gallery\9.jpg" />
+    <Content Include="Library\img\gallery\9s.jpg" />
+    <Content Include="Library\img\html_logo.png" />
+    <Content Include="Library\img\landing\avatar1.jpg" />
+    <Content Include="Library\img\landing\avatar2.jpg" />
+    <Content Include="Library\img\landing\avatar3.jpg" />
+    <Content Include="Library\img\landing\avatar_all.png" />
+    <Content Include="Library\img\landing\dashboard.png" />
+    <Content Include="Library\img\landing\header_one.jpg" />
+    <Content Include="Library\img\landing\header_two.jpg" />
+    <Content Include="Library\img\landing\iphone.jpg" />
+    <Content Include="Library\img\landing\laptop.png" />
+    <Content Include="Library\img\landing\perspective.png" />
+    <Content Include="Library\img\landing\word_map.png" />
+    <Content Include="Library\img\meteor_logo.png" />
+    <Content Include="Library\img\mvc_logo.png" />
+    <Content Include="Library\img\off_canvas.jpg" />
+    <Content Include="Library\img\p1.jpg" />
+    <Content Include="Library\img\p2.jpg" />
+    <Content Include="Library\img\p3.jpg" />
+    <Content Include="Library\img\profile.jpg" />
+    <Content Include="Library\img\profile_big.jpg" />
+    <Content Include="Library\img\profile_small.jpg" />
+    <Content Include="Library\img\p_big1.jpg" />
+    <Content Include="Library\img\p_big2.jpg" />
+    <Content Include="Library\img\p_big3.jpg" />
+    <Content Include="Library\img\rails_logo.png" />
+    <Content Include="Library\img\zender_logo.png" />
+    <Content Include="Library\js\bootstrap.js" />
+    <Content Include="Library\js\bootstrap.min.js" />
+    <Content Include="Library\js\demo\chartjs-demo.js" />
+    <Content Include="Library\js\demo\flot-demo.js" />
+    <Content Include="Library\js\demo\morris-demo.js" />
+    <Content Include="Library\js\demo\peity-demo.js" />
+    <Content Include="Library\js\demo\rickshaw-demo.js" />
+    <Content Include="Library\js\demo\sparkline-demo.js" />
+    <Content Include="Library\js\inspinia.js" />
+    <Content Include="Library\js\jquery-2.1.1.js" />
+    <Content Include="Library\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="Library\js\jquery-ui.custom.min.js" />
+    <Content Include="Library\js\jquery.min.js" />
+    <Content Include="Library\js\plugins\blueimp\jquery.blueimp-gallery.min.js" />
+    <Content Include="Library\js\plugins\bootstrap-markdown\bootstrap-markdown.js" />
+    <Content Include="Library\js\plugins\bootstrap-markdown\markdown.js" />
+    <Content Include="Library\js\plugins\bootstrapTour\bootstrap-tour.min.js" />
+    <Content Include="Library\js\plugins\c3\c3.min.js" />
+    <Content Include="Library\js\plugins\chartist\chartist.min.js" />
+    <Content Include="Library\js\plugins\chartJs\Chart.min.js" />
+    <Content Include="Library\js\plugins\chosen\chosen.jquery.js" />
+    <Content Include="Library\js\plugins\clipboard\clipboard.min.js" />
+    <Content Include="Library\js\plugins\clockpicker\clockpicker.js" />
+    <Content Include="Library\js\plugins\codemirror\codemirror.js" />
+    <Content Include="Library\js\plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="Library\js\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="Library\js\plugins\cropper\cropper.min.js" />
+    <Content Include="Library\js\plugins\d3\d3.min.js" />
+    <Content Include="Library\js\plugins\datapicker\bootstrap-datepicker.js" />
+    <Content Include="Library\js\plugins\dataTables\datatables.min.js" />
+    <Content Include="Library\js\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="Library\js\plugins\diff_match_patch\javascript\diff_match_patch.js" />
+    <Content Include="Library\js\plugins\dotdotdot\jquery.dotdotdot.min.js" />
+    <Content Include="Library\js\plugins\dropzone\dropzone.js" />
+    <Content Include="Library\js\plugins\easypiechart\jquery.easypiechart.js" />
+    <Content Include="Library\js\plugins\flot\curvedLines.js" />
+    <Content Include="Library\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Library\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Library\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Library\js\plugins\flot\jquery.flot.spline.js" />
+    <Content Include="Library\js\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Library\js\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Library\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Library\js\plugins\footable\footable.all.min.js" />
+    <Content Include="Library\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\af.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ar-dz.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ar-ly.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ar-ma.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ar-sa.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ar-tn.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ar.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\bg.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ca.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\cs.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\da.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\de-at.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\de.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\el.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\en-au.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\en-ca.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\en-gb.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\en-ie.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\en-nz.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\es-do.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\es.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\eu.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\fa.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\fi.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\fr-ca.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\fr-ch.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\fr.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\gl.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\he.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\hi.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\hr.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\hu.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\id.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\is.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\it.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ja.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\kk.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ko.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\lb.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\lt.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\lv.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\mk.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ms-my.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ms.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\nb.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\nl-be.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\nl.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\nn.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\pl.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\pt-br.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\pt.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ro.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\ru.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\sk.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\sl.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\sr-cyrl.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\sr.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\sv.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\th.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\tr.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\uk.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\vi.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\zh-cn.js" />
+    <Content Include="Library\js\plugins\fullcalendar\locale\zh-tw.js" />
+    <Content Include="Library\js\plugins\fullcalendar\moment.min.js" />
+    <Content Include="Library\js\plugins\gritter\images\gritter-light.png" />
+    <Content Include="Library\js\plugins\gritter\images\gritter.png" />
+    <Content Include="Library\js\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="Library\js\plugins\gritter\jquery.gritter.css" />
+    <Content Include="Library\js\plugins\gritter\jquery.gritter.min.js" />
+    <Content Include="Library\js\plugins\i18next\i18next.min.js" />
+    <Content Include="Library\js\plugins\iCheck\icheck.min.js" />
+    <Content Include="Library\js\plugins\idle-timer\idle-timer.min.js" />
+    <Content Include="Library\js\plugins\ionRangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="Library\js\plugins\jasny\jasny-bootstrap.min.js" />
+    <Content Include="Library\js\plugins\jeditable\jquery.jeditable.js" />
+    <Content Include="Library\js\plugins\jqGrid\i18n\grid.locale-en.js" />
+    <Content Include="Library\js\plugins\jqGrid\jquery.jqGrid.min.js" />
+    <Content Include="Library\js\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Library\js\plugins\jsKnob\jquery.knob.js" />
+    <Content Include="Library\js\plugins\jsTree\jstree.min.js" />
+    <Content Include="Library\js\plugins\jvectormap\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Library\js\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Library\js\plugins\ladda\ladda.jquery.min.js" />
+    <Content Include="Library\js\plugins\ladda\ladda.min.js" />
+    <Content Include="Library\js\plugins\ladda\spin.min.js" />
+    <Content Include="Library\js\plugins\masonary\masonry.pkgd.min.js" />
+    <Content Include="Library\js\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Library\js\plugins\morris\morris.js" />
+    <Content Include="Library\js\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="Library\js\plugins\nestable\jquery.nestable.js" />
+    <Content Include="Library\js\plugins\nouslider\jquery.nouislider.min.js" />
+    <Content Include="Library\js\plugins\pace\pace.min.js" />
+    <Content Include="Library\js\plugins\peity\jquery.peity.min.js" />
+    <Content Include="Library\js\plugins\preetyTextDiff\jquery.pretty-text-diff.min.js" />
+    <Content Include="Library\js\plugins\rickshaw\rickshaw.min.js" />
+    <Content Include="Library\js\plugins\rickshaw\vendor\d3.v3.js" />
+    <Content Include="Library\js\plugins\select2\select2.full.min.js" />
+    <Content Include="Library\js\plugins\slick\slick.min.js" />
+    <Content Include="Library\js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Library\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Library\js\plugins\staps\jquery.steps.min.js" />
+    <Content Include="Library\js\plugins\summernote\summernote.min.js" />
+    <Content Include="Library\js\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="Library\js\plugins\switchery\switchery.js" />
+    <Content Include="Library\js\plugins\tinycon\tinycon.min.js" />
+    <Content Include="Library\js\plugins\toastr\toastr.min.js" />
+    <Content Include="Library\js\plugins\touchspin\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Library\js\plugins\validate\jquery.validate.min.js" />
+    <Content Include="Library\js\plugins\video\responsible-video.js" />
+    <Content Include="Library\js\plugins\wow\wow.min.js" />
+    <Content Include="Library\css\plugins\footable\fonts\footable.eot" />
+    <Content Include="Library\css\plugins\footable\fonts\footable.ttf" />
+    <Content Include="Library\css\plugins\footable\fonts\footable.woff" />
+    <Content Include="Library\css\plugins\slick\fonts\slick.eot" />
+    <Content Include="Library\css\plugins\slick\fonts\slick.ttf" />
+    <Content Include="Library\css\plugins\slick\fonts\slick.woff" />
+    <Content Include="Library\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Library\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Library\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Library\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Library\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Library\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Library\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Library\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Library\Vue\vue.common.js" />
+    <Content Include="Library\Vue\vue.common.min.js" />
+    <Content Include="Library\Vue\vue.esm.js" />
+    <Content Include="Library\Vue\vue.js" />
+    <Content Include="Library\Vue\vue.min.js" />
+    <Content Include="Library\Vue\vue.runtime.common.js" />
+    <Content Include="Library\Vue\vue.runtime.esm.js" />
+    <Content Include="Library\Vue\vue.runtime.js" />
+    <Content Include="Library\Vue\vue.runtime.min.js" />
+    <Content Include="Scripts\Biz\studentDaily.js" />
+    <Content Include="Scripts\Biz\stuManager.js" />
+    <Content Include="Scripts\Biz\userManager.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <Content Include="Library\Vue\README.md" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Views\Home\Daily.cshtml" />
+    <Content Include="Views\Shared\_LogonLayout.cshtml" />
+    <Content Include="Views\Logon\Index.cshtml" />
+    <Content Include="Views\Logon\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Main\BadPage.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Teacher\StudentDaily.cshtml" />
+    <Content Include="Views\Admin\StuManager.cshtml" />
+    <Content Include="Views\Admin\UserManager.cshtml" />
+    <None Include="Properties\PublishProfiles\H.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tao.Application\Tao.Application.csproj">
+      <Project>{20cdfb2d-32e9-4eba-af53-a8eff373f54f}</Project>
+      <Name>Tao.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tao.Facade\Tao.Facade.csproj">
+      <Project>{bef50d33-e5ab-4a4c-89c4-0f6d7ce3fab8}</Project>
+      <Name>Tao.Facade</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12845</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12845/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
